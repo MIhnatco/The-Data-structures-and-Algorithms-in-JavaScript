@@ -6,13 +6,13 @@ implementations, test cases, and notes on key concepts.
 
 ## Table of Contents
 * [Overview](#overview)
-* Data Structures covered
-* Algorithms covered
-* Folder structure
-* How to use
-* Resources
-* Contributing
-* License
+* [Data Structures covered](#data-structures-covered)
+* [Algorithms covered]{#algorithms)
+* [Folder structure](#folder-structure)
+* [How to use](#how-to-use)
+* [Resources](#resources)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## Overview
 This repository serves as my learning journal and resource bank for Data structures and Algorithms using JavaScript
