@@ -43,6 +43,7 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 │   ├── 
 └── README.md
 ```
+
 Each folder contains:
 * data-structures/: Contains code implementation of various data structures
 * algorithms/: Contains sorting, searching, and other algorithm implementations
@@ -52,18 +53,20 @@ Each folder contains:
 1. Clone the repository
 ```sh
 git clone https://github.com/yourusername/The-Data-structures-and-Algorithms-in-JavaScript.git
+```
 
 2. Navigate to the project directory:
 ```sh
 cd The-Data-structures-and-Algorithms-in-JavaScript
-
+ ```
 3. Run any file
 ```sh
 node The-Data-structures-and-Algorithms-in-JavaScript/Data structures/Arrays/index.js
-
+```
 4. Run tests (Optional, if using Jest)
 ```sh
 npm run test
+```
 
 ## Resources
 * [zerotomastery.io](https://zerotomastery.io/)
