@@ -50,13 +50,17 @@ Each folder contains:
 
 ## How to Use
 1. Clone the repository
-```git clone https://github.com/yourusername/The-Data-structures-and-Algorithms-in-JavaScript.git```
+```sh
+git clone https://github.com/yourusername/The-Data-structures-and-Algorithms-in-JavaScript.git```
 2. Navigate to the project directory:
-```cd The-Data-structures-and-Algorithms-in-JavaScript```
+```sh
+cd The-Data-structures-and-Algorithms-in-JavaScript```
 3. Rund any file
-```node The-Data-structures-and-Algorithms-in-JavaScript/Data structures/Arrays/index.js```
+```sh
+node The-Data-structures-and-Algorithms-in-JavaScript/Data structures/Arrays/index.js```
 4. Run tests (Optional, if using Jest)
-```npm run test```
+```sh
+npm run test```
 
 ## Resources
 * zerotomastery.io (https://zerotomastery.io/)
