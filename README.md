@@ -7,7 +7,7 @@ implementations, test cases, and notes on key concepts.
 ## Table of Contents
 * [Overview](#overview)
 * [Data Structures covered](#data-structures-covered)
-* [Algorithms covered]{#algorithms)
+* [Algorithms covered](#algorithms)
 * [Folder structure](#folder-structure)
 * [How to use](#how-to-use)
 * [Resources](#resources)
@@ -45,9 +45,9 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 ```
 
 Each folder contains:
-* data-structures/: Contains code implementation of various data structures
-* algorithms/: Contains sorting, searching, and other algorithm implementations
-* tests/: Unit test files for the implementations using libraries like Jest
+* Data structures/: Contains code implementation of various data structures
+* Algorithms/: Contains sorting, searching, and other algorithm implementations
+* Tests/: Unit test files for the implementations using libraries like Jest
 
 ## How to Use
 1. Clone the repository
