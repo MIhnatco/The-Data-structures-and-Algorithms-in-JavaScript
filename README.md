@@ -76,9 +76,13 @@ npm run test
 Contributions, issues, and features requests are welcome!
 
 1.Fork the repository
+
 2.Create a new branch (git checkout -b feature-brach)
+
 3.Commit your changes (git commit -m 'Add feature')
+
 4.Push to the branch (git push origin feature-branch)
+
 5.Create a pull request
 
 ## License
