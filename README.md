@@ -14,21 +14,21 @@ implementations, test cases, and notes on key concepts.
 * Contributing
 * License
 
-  ## Overview
-  This repository serves as my learning journal and resource bank for Data structures and Algorithms using JavaScript
-  The repository is designed to:
+## Overview
+This repository serves as my learning journal and resource bank for Data structures and Algorithms using JavaScript
+The repository is designed to:
   * Explore the theory behind various data structures and algorithms.
   * Provide clean, well-documented implementations in JavaScript.
   * Include time and space complexity analyses for each algorithm.
 
-  Feel free to explore the code, raise issues, or contribute if you find an improvement.
+Feel free to explore the code, raise issues, or contribute if you find an improvement.
 
-  ## Data structures covered
+## Data structures covered
   * Arrays
  
-  ## Algorithms covered
+## Algorithms covered
 
-  ## Folder structure
+## Folder structure
   ```
 ├── data-structures/
 │   ├── arrays/
@@ -51,20 +51,23 @@ Each folder contains:
 ## How to Use
 1. Clone the repository
 ```sh
-git clone https://github.com/yourusername/The-Data-structures-and-Algorithms-in-JavaScript.git```
+git clone https://github.com/yourusername/The-Data-structures-and-Algorithms-in-JavaScript.git
+
 2. Navigate to the project directory:
 ```sh
-cd The-Data-structures-and-Algorithms-in-JavaScript```
-3. Rund any file
+cd The-Data-structures-and-Algorithms-in-JavaScript
+
+3. Run any file
 ```sh
-node The-Data-structures-and-Algorithms-in-JavaScript/Data structures/Arrays/index.js```
+node The-Data-structures-and-Algorithms-in-JavaScript/Data structures/Arrays/index.js
+
 4. Run tests (Optional, if using Jest)
 ```sh
-npm run test```
+npm run test
 
 ## Resources
-* zerotomastery.io (https://zerotomastery.io/)
-* algoexpert.is(https://algoexpert.io/)
+* [zerotomastery.io](https://zerotomastery.io/)
+* [algoexpert.io](https://algoexpert.io/)
 
 ## Contributing
 Contributions, issues, and features requests are welcome!
