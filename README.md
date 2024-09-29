@@ -5,7 +5,7 @@ Welcome to my repository! This project is aimed at documenting my journey and le
 implementations, test cases, and notes on key concepts.
 
 ## Table of Contents
-* Overview
+* [Overview](#overview)
 * Data Structures covered
 * Algorithms covered
 * Folder structure
@@ -30,15 +30,15 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 
 ## Folder structure
   ```
-├── data-structures/
+├── Data structures/
 │   ├── arrays/
 │   │   ├── array-basics.js
 │   │   
 │   └── linked-lists/
 │     
-├── algorithms/
+├── Algorithms/
 │  
-├── tests/
+├── Tests/
 │   ├── array-tests.js
 │   ├── 
 └── README.md
@@ -74,6 +74,7 @@ npm run test
 
 ## Contributing
 Contributions, issues, and features requests are welcome!
+
 1.Fork the repository
 2.Create a new branch (git checkout -b feature-brach)
 3.Commit your changes (git commit -m 'Add feature')
