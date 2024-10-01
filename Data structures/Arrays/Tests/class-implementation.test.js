@@ -143,4 +143,69 @@ describe("TheArray - class implementation", () => {
       expect(arr.get(0)).toStrictEqual({ key: "value" });
     });
   });
+
+  describe("deleteAtIndex() method", () => {
+    it("delete an element from the middle of the array", () => {
+      const array = new TheArray();
+      array.data = {
+        0: "a",
+        1: "b",
+        2: "c",
+        3: "d",
+      };
+
+      array.length = 4;
+
+      array.deleteAtIndex(1);
+      expect(array.data).toStrictEqual({ 0: "a", 1: "c", 2: "d" });
+      expect(array.length).toBe(3);
+    });
+
+    it("delete the first element from the array", () => {
+      const array = new TheArray();
+      array.data = {
+        0: "a",
+        1: "b",
+        2: "c",
+        3: "d",
+      };
+
+      array.length = 4;
+      array.deleteAtIndex(0);
+      expect(array.data).toStrictEqual({ 0: "b", 1: "c", 2: "d" });
+      expect(array.length).toBe(3);
+    });
+
+    it("delete the last element from the array", () => {
+      const array = new TheArray();
+      array.data = {
+        0: "a",
+        1: "b",
+        2: "c",
+        3: "d",
+      };
+
+      array.length = 4;
+      array.deleteAtIndex(array.length - 1);
+      expect(array.data).toStrictEqual({ 0: "a", 1: "b", 2: "c" });
+      expect(array.length).toBe(3);
+    });
+
+    it("attempt to delete an item with invalid index (negative index and index out of bounds)", () => {
+      const array = new TheArray();
+      array.data = {
+        0: "a",
+        1: "b",
+        2: "c",
+        3: "d",
+      };
+
+      array.length = 4;
+
+      expect(() => arr.deleteAtIndex(-1)).toThrow("Index -1 out of bounds.");
+      expect(() => arr.deleteAtIndex(5)).toThrow("Index 5 out of bounds.");
+    });
+  });
+
+  describe("insertAtIndex() method")
 });
