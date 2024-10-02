@@ -31,16 +31,18 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 ## Folder structure
   ```
 ├── Data structures/
-│   ├── arrays/
+│   ├── Arrays/
+|   |   ├── Tests/
+|   |   |   ├── array-basics.test.js
+|   |   |   ├── class-implementation.test.js
 │   │   ├── array-basics.js
+|   |   ├── class-implementation.js
 │   │   
-│   └── linked-lists/
+│   └── Linked-lists/
 │     
 ├── Algorithms/
 │  
-├── Tests/
-│   ├── array-tests.js
-│   ├── 
+├── 
 └── README.md
 ```
 
