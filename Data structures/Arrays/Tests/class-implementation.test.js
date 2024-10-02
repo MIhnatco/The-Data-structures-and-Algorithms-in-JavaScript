@@ -33,7 +33,8 @@ describe("TheArray - class implementation", () => {
     });
 
     it("should throw an error if the item is undefined", () => {
-      expect(() => arr.push(undefined).toThrow("The item can't be undefined."));
+      const arr = new TheArray();
+      expect(() => arr.push(undefined)).toThrow("The item can't be undefined.");
     });
 
     it("should handle pushing different types of items", () => {
@@ -112,7 +113,7 @@ describe("TheArray - class implementation", () => {
   describe("unshift() method", () => {
     it("should throw an error if the item is undefined", () => {
       expect(() => arr.unshift(undefined)).toThrow(
-        "The item can't be undefined."
+        "The item can't be undefined or null."
       );
     });
 
@@ -207,5 +208,46 @@ describe("TheArray - class implementation", () => {
     });
   });
 
-  describe("insertAtIndex() method")
+  describe("insertAtIndex(index, value) method", () => {
+    it("insert an item in the middle of the array", () => {
+      arr.push("a");
+      arr.push("b");
+      arr.push("c");
+
+      arr.insertAtIndex(1, "d");
+      expect(arr.data).toStrictEqual({ 0: "a", 1: "d", 2: "b", 3: "c" });
+    });
+
+    it("insert an item in the beginning of the array", () => {
+      arr.push("a");
+
+      arr.insertAtIndex(0, "b");
+      expect(arr.data).toStrictEqual({ 0: "b", 1: "a" });
+    });
+
+    it("insert an item in the end of the array", () => {
+      arr.push("a");
+      arr.push("b");
+
+      arr.insertAtIndex(2, "C");
+      expect(arr.data).toStrictEqual({ 0: "a", 1: "b", 2: "C" });
+    });
+
+    it("attempt to delete an item with invalid index (negative index and index out of bounds)", () => {
+      arr.push("a");
+      arr.push("b");
+
+      expect(() => arr.insertAtIndex(-1, 5)).toThrow("Index -1 out of bounds.");
+      expect(() => arr.insertAtIndex(4, 2)).toThrow("Index 4 out of bounds.");
+    });
+
+    it("should throw an error if the item is undefined or null", () => {
+      expect(() => arr.insertAtIndex(1, null)).toThrow(
+        "The item can't be undefined or null."
+      );
+      expect(() => arr.insertAtIndex(1, undefined)).toThrow(
+        "The item can't be undefined or null."
+      );
+    });
+  });
 });
