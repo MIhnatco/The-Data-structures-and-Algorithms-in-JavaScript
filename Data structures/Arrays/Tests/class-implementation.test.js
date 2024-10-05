@@ -250,4 +250,41 @@ describe("TheArray - class implementation", () => {
       );
     });
   });
+
+  describe("indexOf method", () => {
+    it("returns correct index of existing item", () => {
+      arr.push("a");
+      arr.push("b");
+      arr.push("c");
+
+      expect(arr.indexOf("b")).toBe(1);
+    });
+
+    it("should return -1 if the item is not found", () => {
+      arr.push("a");
+
+      expect(arr.indexOf("d")).toBe(-1);
+    });
+
+    it("should return the first index of the item that appears multiple times", () => {
+      arr.push("a");
+      arr.push("b");
+      arr.push("c");
+      arr.push("c");
+
+      expect(arr.indexOf("c")).toBe(2);
+    });
+
+    it("should throw an error if the item is null", () => {
+      expect(() => arr.indexOf(null)).toThrow(
+        "Item can't be null or undefined"
+      );
+    });
+
+    it("should throw an error if the item is undefined", () => {
+      expect(() => arr.indexOf(undefined)).toThrow(
+        "Item can't be null or undefined"
+      );
+    });
+  });
 });

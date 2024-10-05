@@ -141,6 +141,30 @@ class TheArray {
     this.data[index] = item;
     this.length++;
   }
+
+  
+  /**
+   * IndexOf: Return the first index of a specified item.
+   * @param {*} item - Searching item's index
+   * @returns {number} - Index of the item or -1 if not found
+   * @throws Will throw an error if the item is null or undefined.
+   * @complexity O(n)T - Its a linear time complexity since the worst case scenario involves running through the whole array before finding the item.
+   */
+
+  indexOf(item){
+    if (item === null || item === undefined) {
+      throw new Error("Item can't be null or undefined");
+  }
+
+    for (let i = 0; i < this.length; i++){
+      if(this.data[i] === item){
+        //Return index if found
+        return i
+      }
+    }
+    //Return -1 if not found
+    return -1
+  }
 }
 
 module.exports = TheArray;
