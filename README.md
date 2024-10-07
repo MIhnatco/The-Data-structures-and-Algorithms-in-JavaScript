@@ -38,8 +38,15 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 │   │   ├── array-basics.js
 |   |   ├── class-implementation.js
 │   │   
-│   └── Linked-lists/
-│     
+│   ├── Hash Tables/
+|   |   ├── Tests/
+|   |   |   ├── class-implementation.test.js
+|   |   |   
+│   │   ├── hash-tables-basics.js
+|   |   ├── class-implementation.js
+│   |   ├── README.md
+|   |
+| 
 ├── Algorithms/
 │  
 ├── 
