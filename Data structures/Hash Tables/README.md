@@ -38,7 +38,7 @@ Here are some common operations that can be performed on hash tables:
 - **Update:** Change the value of an existing key.
 - **Collision Handling:** Manage key collisions using techniques such as chaining or probing.
 
-## How Hast tables work.
+## How Hash tables work.
 
 1. **Hash function:** When you add a key-value pair to a hash table, the key is passed through a hash function. This function converts the key into an index in the array.
 
@@ -63,13 +63,15 @@ Here are some common operations that can be performed on hash tables:
 
 ## Folder structure
 
+```
 hash-tables/
-├──Tests/
-| ├── class-implementation.test.js # Unit tests for the hash table implementation  
- ├── class-implementation.js
-├── hash-tables-basics.js
-├── README.md  
- |
+    ├──Tests/
+    |   ├── class-implementation.test.js # Unit tests for the hash table implementation
+    ├── class-implementation.js
+    ├── hash-tables-basics.js
+    ├── README.md
+    |
+```
 
 ## How to run code
 
