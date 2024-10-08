@@ -26,7 +26,7 @@ A **Hash Table** (also known as Hash Map) is a data structure that stores key-va
 
 - **Efficient access:** On average, lookup, insert, and delete operations take constant time O(1).
 
-- **Collision handling:** Collisions occur when different keys map to the same index. Common techniques include separate chainign and linear probing.
+- **Collision handling:** Collisions occur when different keys map to the same index. Common techniques include separate chaining and linear probing.
 
 ## Common Operations
 
