@@ -12,24 +12,31 @@ class HashTable {
   }
 
   /**
-   * Simple hash function to convert key to index
+   * Hash function to convert key to index
+   * Using Horner's method (Data Structures and Algorithms with JavaScript by Michael McMillan.)
    * @param {string} key
    * @returns {number} - The index for the key
    */
 
   _hash(key) {
     let hash = 0;
+    const H = 37;
     for (let i = 0; i < key.length; i++) {
-      hash = (hash + key.charCodeAt(i) * i) % this.data.length;
+      hash = H * hash + key.charCodeAt(i);
     }
-    return hash;
+    hash = hash % this.data.length;
+
+    if (hash < 0) {
+      hash += this.data.length - 1;
+    }
+    return parseInt(hash);
   }
 
   /**
    * Pushes the key-value pair to the array
    * @param {string} key
    * @param {*} value
-   * 
+   *
    * Time complexity
    * Average Case: (O(1)), assuming a good hash function and a low load factor.
    * Worst Case: (O(n)), where (n) is the number of elements in the slot due to collisions.
@@ -47,7 +54,7 @@ class HashTable {
       //slot exists, so we have to check if the key exists
       for (let i = 0; i < currentSlot.length; i++) {
         if (currentSlot[i][0] === key) {
-          currentSlot[i][i] = value;
+          currentSlot[i][1] = value;
           return;
         }
       }
@@ -57,10 +64,34 @@ class HashTable {
   }
 
   /**
+   * Checks if the key exists
+   * @param {string} key
+   * @returns {boolean} - True if the key exists, otherwise false
+   * Time complexity
+   * Average Case: (O(1)), assuming a good hash function and a low load factor.
+   * Worst Case: (O(n)), where (n) is the number of elements in the slot due to collisions.
+   */
+
+  hasKey(key) {
+    const index = this._hash(key);
+    const currentSlot = this.data[index];
+
+    if (currentSlot) {
+      for (let i = 0; i < currentSlot.length; i++) {
+        if (currentSlot[i][0] === key) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+
+  /**
    * Retrieves the value by key
    * @param {*} key
    * @returns {*} - The value associated with the key
-   * 
+   *
    * Time complexity
    * Average Case: (O(1)), assuming a good hash function and a low load factor.
    * Worst Case: (O(n)), where (n) is the number of elements in the slot due to collisions.
@@ -82,7 +113,7 @@ class HashTable {
    * Removes a key-value pair from the hash table
    * @param {string} key
    * @returns {boolean} - Returns true if the key was successfully removed, false otherwise
-    * Time complexity
+   * Time complexity
    * Average Case: (O(1)), assuming a good hash function and a low load factor.
    * Worst Case: (O(n)), where (n) is the number of elements in the slot due to collisions.
    */
@@ -106,33 +137,72 @@ class HashTable {
   /**
    * Returns an iterable with all the keys
    * @returns []
-   * 
-   * Time complexity  
+   *
+   * Time complexity
    * Average Case: (O(m + n)), where (m) is the number of slots in the data array and (n) is the average number of elements per slot.
    * Worst Case: (O(m * n)), where (m) is the number of slots and (n) is the number of elements in the slot due to collisions.
    */
   keys() {
-    if (!this.data.length) {
-      return undefined;
-    }
-
     const keysArray = [];
+    //flag
+    let isEmpty = true;
 
     for (let i = 0; i < this.data.length; i++) {
       //if it's not an empty memory cell
       if (this.data[i]) {
-        //also loop through all the potential collisions
-        if (this.data.length > 1) {
-          for (let j = 0; j < this.data[i].length; j++) {
-            keysArray.push(this.data[i][j][0]);
-          }
-        } else {
-          keysArray.push(this.data[i][0]);
+        isEmpty = false;
+        for (let j = 0; j < this.data[i].length; j++) {
+          keysArray.push(this.data[i][j][0]);
         }
       }
     }
 
-    return keysArray
+    return isEmpty ? undefined : keysArray;
+  }
+
+  /**
+   * Returns an array of all values in the hash table
+   * @returns {Array} - The list of values
+   *
+   * Time complexity
+   * Average Case: (O(m + n)), where (m) is the number of slots in the data array  and (n) is the average number of elements per slot.
+   * Worst Case: (O(m * n)), where (m) is the number of slots and (n) is the number of elements in the slot due to collisions.
+   */
+  values() {
+    const valuesArray = [];
+    //flag
+    let isEmpty = true;
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        isEmpty = false;
+        for (let j = 0; j < this.data[i].length; j++) {
+          valuesArray.push(this.data[i][j][1]);
+        }
+      }
+    }
+
+    return isEmpty ? undefined : valuesArray;
+  }
+
+  /**
+   * Returns an array of all entries in the hash table
+   * @returns {Array} - The list of entries
+   */
+  entries() {
+    const entriesArray = [];
+    let isEmpty = true;
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        isEmpty = false;
+        for (let j = 0; j < this.data[i].length; j++) {
+          entriesArray.push(this.data[i][j]);
+        }
+      }
+    }
+
+    return isEmpty ? undefined : entriesArray;
   }
 }
 

@@ -42,7 +42,7 @@ Here are some common operations that can be performed on hash tables:
 
 1. **Hash function:** When you add a key-value pair to a hash table, the key is passed through a hash function. This function converts the key into an index in the array.
 
-2. **Storage:** The value is then stored at this index in the array.
+2. **Storage:** This index is then used to store the data in the array.
 
 3. **Retrieval:** When you want to retrieve a value, you pass its key through the same hash function to get the index, then look up the value at that index.
 
@@ -81,7 +81,7 @@ hash-tables/
 git clone https://github.com/yourusername/The-Data-structures-and-Algorithms-in-JavaScript.git
 ```
 
-2. Navigate to the Hash Tables fFolder:
+2. Navigate to the Hash Tables folder:
 
 ```sh
 cd Hash Tables
@@ -107,5 +107,6 @@ Here are some helpful resources for learning more about **Hash tables**:
 - [algoexpert.io](https://algoexpert.io/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/)
 - [JavaScript.info](https://javascript.info/)
+- Data Structures and Algorithms with JavaScript by Michael McMillan.
 
 This README.md serves as a guide for understanding and navigating the hash-tables/ folder. It includes a brief overview of hash tables, key operations, techniques, and algorithms implemented within the folder.
