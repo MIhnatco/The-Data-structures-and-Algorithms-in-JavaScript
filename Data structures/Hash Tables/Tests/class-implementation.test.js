@@ -106,4 +106,28 @@ describe("Hash Table implementation", () => {
   it("if no entries, undefind", () => {
     expect(hashTable.entries()).toBe(undefined);
   });
+
+  it("clear the hash table", () => {
+    hashTable.set("key1", "value1");
+    hashTable.set("key2", "value2");
+
+    hashTable.clear();
+
+    expect(hashTable.entries()).toBe(undefined);
+  });
+
+  it("should count the number of entries", () => {
+    hashTable.set("key1", "value1");
+    hashTable.set("key2", "value2");
+    hashTable.set("key3", "value3");
+
+    let totalCount = hashTable.size();
+
+    expect(totalCount).toBe(3);
+  });
+
+  it("empty hash table returns 0", () => {
+    let totalCount = hashTable.size();
+    expect(totalCount).toBe(0);
+  });
 });

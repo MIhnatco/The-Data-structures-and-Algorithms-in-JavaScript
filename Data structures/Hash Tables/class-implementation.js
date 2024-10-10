@@ -4,7 +4,7 @@
 
 class HashTable {
   /**
-   * Creae a new array of specific size
+   * Create a new array of specific size
    * @param {number} size - The size of the array
    */
   constructor(size) {
@@ -126,12 +126,15 @@ class HashTable {
       for (let i = 0; i < currentSlot.length; i++) {
         if (currentSlot[i][0] === key) {
           currentSlot.splice(i, 1);
+
+          if (currentSlot.length === 0) {
+            this.data[index] = undefined;
+          }
           return true;
         }
       }
+      return false;
     }
-
-    return false;
   }
 
   /**
@@ -188,6 +191,9 @@ class HashTable {
   /**
    * Returns an array of all entries in the hash table
    * @returns {Array} - The list of entries
+   * Time complexity
+   * Average Case: (O(m + n)), where (m) is the number of slots in the data array  and (n) is the average number of elements per slot.
+   * Worst Case: (O(m * n)), where (m) is the number of slots and (n) is the number of elements in the slot due to collisions.
    */
   entries() {
     const entriesArray = [];
@@ -203,6 +209,34 @@ class HashTable {
     }
 
     return isEmpty ? undefined : entriesArray;
+  }
+
+  /**
+   * Resets the hast table to an empty state.
+   *
+   * O(1)
+   */
+  clear() {
+    this.data = new Array(this.data.length);
+  }
+
+  /**
+   * Returns the total number of key-value pairs stored in the hash table.
+   * @returns {number} - The count of key-value pairs
+   *
+   * Time complexity
+   * Average Case: (O(m + n)), where (m) is the number of slots in the data array  and (n) is the average number of elements per slot.
+   * Worst Case: (O(m * n)), where (m) is the number of slots and (n) is the number of elements in the slot due to collisions.
+   */
+  size() {
+    let totalCount = 0;
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        totalCount += this.data[i].length;
+      }
+    }
+    return totalCount;
   }
 }
 
