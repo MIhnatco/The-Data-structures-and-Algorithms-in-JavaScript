@@ -240,4 +240,9 @@ class HashTable {
   }
 }
 
-module.exports = HashTable;
+//module.exports = HashTable;
+
+let first = new HashTable(10);
+
+first.set("one", 10);
+first.set("two", 20);
