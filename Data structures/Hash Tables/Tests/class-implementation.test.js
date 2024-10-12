@@ -174,7 +174,7 @@ describe("Hash Table implementation", () => {
       let result = hashTable.values();
 
       expect(result.length).toBe(1000);
-      expect(result).toContain("value500"); //specific key
+      expect(result).toContain("value500"); //specific value
     });
   });
 
@@ -189,6 +189,49 @@ describe("Hash Table implementation", () => {
       expect(entries[0]).toStrictEqual(["key1", "value1"]);
       expect(entries[1]).toStrictEqual(["key2", "value2"]);
     });
+
+    it("should return empty array if no entries", () => {
+      let result = hashTable.entries();
+
+      expect(result).toStrictEqual([]);
+    });
+
+    it("handles collisions and returns all entries", () => {
+      //small catalog size to force collisions
+      let smallCatalog = new HashTable(3);
+
+      smallCatalog.set("key1", "value1");
+      smallCatalog.set("key2", "value2");
+      smallCatalog.set("key3", "value3");
+
+      let result = smallCatalog.entries();
+
+      //all keys returned despite collisions
+      expect(result).toContainEqual(["key1", "value1"]);
+      expect(result).toContainEqual(["key2", "value2"]);
+      expect(result).toContainEqual(["key3", "value3"]);
+    });
+
+    it("does not include deleted entries", () => {
+      hashTable.set("key1", "value1");
+      hashTable.set("key2", "value2");
+
+      hashTable.remove("key1");
+
+      let result = hashTable.entries();
+      expect(result).toStrictEqual([["key2", "value2"]]);
+    });
+
+    it("handles large number of entries", () => {
+      for (let i = 0; i < 1000; i++) {
+        hashTable.set(`key${i}`, `value${i}`);
+      }
+
+      let result = hashTable.entries();
+
+      expect(result.length).toBe(1000);
+      expect(result).toContainEqual(["key500", "value500"]); //specific entrie
+    });
   });
 
   it("clear the hash table", () => {
@@ -197,10 +240,10 @@ describe("Hash Table implementation", () => {
 
     hashTable.clear();
 
-    expect(hashTable.entries()).toBe(undefined);
+    expect(hashTable.entries()).toStrictEqual([]);
   });
 
-  it("should count the number of entries", () => {
+  it("size  - should count the number of entries", () => {
     hashTable.set("key1", "value1");
     hashTable.set("key2", "value2");
     hashTable.set("key3", "value3");
