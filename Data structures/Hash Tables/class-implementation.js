@@ -168,7 +168,7 @@ class HashTable {
    * Average Case: (O(m + n)), where (m) is the number of slots in the data array  and (n) is the average number of elements per slot.
    * Worst Case: (O(m * n)), where (m) is the number of slots and (n) is the number of elements in the slot due to collisions.
    */
-  
+
   values() {
     const valuesArray = [];
     for (let i = 0; i < this.data.length; i++) {
@@ -191,18 +191,15 @@ class HashTable {
    */
   entries() {
     const entriesArray = [];
-    let isEmpty = true;
-
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i]) {
-        isEmpty = false;
         for (let j = 0; j < this.data[i].length; j++) {
           entriesArray.push(this.data[i][j]);
         }
       }
     }
 
-    return isEmpty ? undefined : entriesArray;
+    return entriesArray.length > 0 ? entriesArray : [];
   }
 
   /**
