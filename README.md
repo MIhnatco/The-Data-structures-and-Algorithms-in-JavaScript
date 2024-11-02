@@ -25,7 +25,8 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 
 ## Data structures covered
   * Arrays
- 
+  * Hash Tables 
+  
 ## Algorithms covered
 
 ## Folder structure
@@ -37,6 +38,7 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 |   |   |   ├── class-implementation.test.js
 │   │   ├── array-basics.js
 |   |   ├── class-implementation.js
+|   |   ├── README.md
 │   │   
 │   ├── Hash Tables/
 |   |   ├── Tests/
