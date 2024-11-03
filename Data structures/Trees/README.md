@@ -44,3 +44,24 @@ Heaps are used in priority queues and sorting algorithms.
 
 **5. Other Trees**
 Includes structures such as Red-Black Trees, Tries, and B-Trees, which offer specific advantages for particular use cases.
+
+## Common Operations
+Each tree type supports a variety of operations, such as: 
+
+- **Insertion:** Add a new node to the tree while maintaining the tree's proportions.
+- **Deletion:** Remove a node while preserving the tree's structure.
+- **Searching:** Find a node by value.
+- **Traversal:** 
+    - **In-order Traversal:** Left, Root, Right
+    - **Pre-order Traversal:** Root, Left, Rigth
+    - **Post-order Traversal:** Left, Right, Root
+    - **Level-order Traversal:** Visit nodes level by level, typically implemented using a queue.
+- **Balancing:** Re-structure the tree to ensure minimal height (AVL)
+
+
+## Resources 
+- [zerotomastery.io](https://zerotomastery.io/)
+- [algoexpert.io](https://algoexpert.io/)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+- [JavaScript.info](https://javascript.info/)
+- Data Structures and Algorithms with JavaScript by Michael McMillan.
