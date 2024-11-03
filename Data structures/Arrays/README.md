@@ -1,6 +1,6 @@
 # Arrays in JavaScript
 
-This section focuses on the **Array** data structure in JavaScript. Arrays are one of the most commonly used data structures, offering a simple way to store and access multiple values in a single variable.
+This section focuses on the **Array** data structure in JavaScript. **Arrays** are one of the most commonly used data structures, offering a simple way to store and access multiple values in a single variable.
 
 ## Table of Contents
 
