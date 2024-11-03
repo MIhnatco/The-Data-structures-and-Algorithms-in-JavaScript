@@ -26,6 +26,7 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 ## Data structures covered
   * Arrays
   * Hash Tables 
+  * Trees
   
 ## Algorithms covered
 
@@ -34,7 +35,6 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 ├── Data structures/
 │   ├── Arrays/
 |   |   ├── Tests/
-|   |   |   ├── array-basics.test.js
 |   |   |   ├── class-implementation.test.js
 │   │   ├── array-basics.js
 |   |   ├── class-implementation.js
@@ -45,6 +45,14 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 |   |   |   ├── class-implementation.test.js
 |   |   |   
 │   │   ├── hash-tables-basics.js
+|   |   ├── class-implementation.js
+│   |   ├── README.md
+|   |
+│   ├── Trees/
+|   |   ├── Tests/
+|   |   |   ├── class-implementation.test.js
+|   |   |   
+│   │   ├── trees-basics.js
 |   |   ├── class-implementation.js
 │   |   ├── README.md
 |   |
