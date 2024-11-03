@@ -58,7 +58,6 @@ Each tree type supports a variety of operations, such as:
     - **Level-order Traversal:** Visit nodes level by level, typically implemented using a queue.
 - **Balancing:** Re-structure the tree to ensure minimal height (AVL)
 
-
 ## Resources 
 - [zerotomastery.io](https://zerotomastery.io/)
 - [algoexpert.io](https://algoexpert.io/)
