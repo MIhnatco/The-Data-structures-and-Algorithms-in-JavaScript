@@ -49,11 +49,13 @@ Feel free to explore the code, raise issues, or contribute if you find an improv
 │   |   ├── README.md
 |   |
 │   ├── Trees/
-|   |   ├── Tests/
-|   |   |   ├── class-implementation.test.js
-|   |   |   
-│   │   ├── trees-basics.js
-|   |   ├── class-implementation.js
+|   |   ├── BST/
+|   |   |   ├── Tests/
+|   |   |   |    ├── class-implementation.test.js
+|   |   |   |   
+│   │   |   ├── BST-basics.js
+|   |   |   ├── class-implementation.js
+|   |   |
 │   |   ├── README.md
 |   |
 | 
