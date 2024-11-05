@@ -18,7 +18,9 @@ A BST can manage various data types. Imagine a BST that organizes library books 
 ## Overview
 
 A **Binar Search Tree** is a type of binary tree, which means that each node has at most two children.
-For any given node: - The left subtree contains nodes with values less than the node's value. - The right subtree contains nodes with values greater than the node's value.
+For any given node: 
+- The left subtree contains nodes with values less than the node's value. 
+- The right subtree contains nodes with values greater than the node's value.
 
 This property allows for efficine operations, particularly with sorted data.
 
