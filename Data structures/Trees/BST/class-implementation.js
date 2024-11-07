@@ -96,6 +96,47 @@ class BinarySearchTree {
         return this; //current instance of the tree
 
     }
+
+
+    /**
+     * Looks up a value in the tree
+     * @param {*} value - The value to be looked up
+     * @returns {boolean} - True if the value is found, false otherwise
+     * 
+     * Time complexity: O(log n) on average, O(n) in the worst case (unbalanced tree)
+     */
+
+    lookup(value){
+
+        //start from the root of BST
+        let currentNode = this.root
+
+        //if the BST is empty return false (value is not found)
+        if(!currentNode){
+            return false
+        }
+
+
+        //Traverse the BST
+        while(currentNode !== null){
+
+            //If the value is found return true
+            if(currentNode.value === value){
+                return true
+
+                //If the value is less than the current node's value, traverse the left subtree
+            } else if (value < currentNode.value){
+                currentNode = currentNode.left;
+
+                //Otherwise,  traverse right subtree
+            } else {
+                currentNode = currentNode.right
+            }
+        }
+
+        //Return false if the value is not in the BST
+        return false
+    }
 }
 
 
