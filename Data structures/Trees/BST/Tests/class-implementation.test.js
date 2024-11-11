@@ -136,5 +136,37 @@ describe("BST class implementation", () => {
     });
   });
 
-  
+  //test cases for 'remove()' method
+  describe("remove() method", () => {
+    it("remove leaf node (no children)", () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(15);
+      bst.insert(3);
+
+      expect(bst.remove(3)).toBe(true);
+      expect(bst.root.left.left).toBe(null);
+    });
+
+    it("remove node with only left child", () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(15);
+      bst.insert(3);
+      bst.insert(2);
+
+      expect(bst.remove(3)).toBe(true);
+      expect(bst.root.left.left.value).toBe(2);
+    });
+
+    it("remove root node with no right child", () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(3);
+
+      expect(bst.remove(10)).toBe(true);
+      expect(bst.root.value).toBe(5);
+      expect(bst.root.left.value).toBe(3);
+    });
+  });
 });

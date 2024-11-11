@@ -154,9 +154,11 @@ class BinarySearchTree {
   /**
    * Removes a value from the tree
    * @param {*} value - The value to be removed
+   *
+   * Time complexity: O(log n) on average, O(n) in the worst case (unbalanced tree)
    */
   remove(value) {
-    //setting currentNode to the roor of the BST
+    //setting currentNode to the root of the BST
     let currentNode = this.root;
 
     //to keep track of parent node for currentNode
@@ -206,8 +208,9 @@ class BinarySearchTree {
   }
 }
 
-//module.exports = BinarySearchTree;
+module.exports = BinarySearchTree;
 
+/*
 // Create a new BST and insert values
 const bst = new BinarySearchTree();
 bst.insert(15);
@@ -227,3 +230,4 @@ bst.remove(5);
 // Display the BST after removal
 console.log("\nBST after removal:");
 bst.display();
+*/
