@@ -185,7 +185,7 @@ class BinarySearchTree {
 
         //we found our value
       } else if (currentNode.value === value) {
-        //1: No right child:
+        //1) no right child:
         if (currentNode.right === null) {
           if (parentNode === null) {
             this.root = currentNode.left;
@@ -199,6 +199,24 @@ class BinarySearchTree {
               parentNode.right = currentNode.left;
             }
           }
+
+          //2) right child which doesn't have a left child
+        } else if(currentNode.right.left === null){
+          if(parentNode === null){
+            this.root = currentNode.left
+          } else {
+            currentNode.right.left = currentNode.left;
+
+            //if parent > current, right child becomes parent's left
+            if(currentNode.value < parentNode.value){
+              parentNode.left = currentNode.right
+
+              //if parent < current, right child becomes parent's right
+            } else if(currentNode.value > parentNode.value) {
+              parentNode.right = currentNode.right
+            }
+          }
+
         }
 
         return true;
