@@ -201,22 +201,21 @@ class BinarySearchTree {
           }
 
           //2) right child which doesn't have a left child
-        } else if(currentNode.right.left === null){
-          if(parentNode === null){
-            this.root = currentNode.left
+        } else if (currentNode.right.left === null) {
+          if (parentNode === null) {
+            this.root = currentNode.right;
           } else {
             currentNode.right.left = currentNode.left;
 
             //if parent > current, right child becomes parent's left
-            if(currentNode.value < parentNode.value){
-              parentNode.left = currentNode.right
+            if (currentNode.value < parentNode.value) {
+              parentNode.left = currentNode.right;
 
               //if parent < current, right child becomes parent's right
-            } else if(currentNode.value > parentNode.value) {
-              parentNode.right = currentNode.right
+            } else if (currentNode.value > parentNode.value) {
+              parentNode.right = currentNode.right;
             }
           }
-
         }
 
         return true;
@@ -228,8 +227,8 @@ class BinarySearchTree {
 
 module.exports = BinarySearchTree;
 
-/*
 // Create a new BST and insert values
+/*
 const bst = new BinarySearchTree();
 bst.insert(15);
 bst.insert(10);
@@ -248,4 +247,5 @@ bst.remove(5);
 // Display the BST after removal
 console.log("\nBST after removal:");
 bst.display();
+
 */
