@@ -138,35 +138,70 @@ describe("BST class implementation", () => {
 
   //test cases for 'remove()' method
   describe("remove() method", () => {
-    it("remove leaf node (no children)", () => {
-      bst.insert(10);
-      bst.insert(5);
-      bst.insert(15);
-      bst.insert(3);
+    describe(" child with no left child", () => {
+      it("remove leaf node (no children)", () => {
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(15);
+        bst.insert(3);
 
-      expect(bst.remove(3)).toBe(true);
-      expect(bst.root.left.left).toBe(null);
+        expect(bst.remove(3)).toBe(true);
+        expect(bst.root.left.left).toBe(null);
+      });
+
+      it("remove node with only left child", () => {
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(15);
+        bst.insert(3);
+        bst.insert(2);
+
+        expect(bst.remove(3)).toBe(true);
+        expect(bst.root.left.left.value).toBe(2);
+      });
+
+      it("remove root node with no right child", () => {
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(3);
+
+        expect(bst.remove(10)).toBe(true);
+        expect(bst.root.value).toBe(5);
+        expect(bst.root.left.value).toBe(3);
+      });
     });
 
-    it("remove node with only left child", () => {
-      bst.insert(10);
-      bst.insert(5);
-      bst.insert(15);
-      bst.insert(3);
-      bst.insert(2);
+    describe("node with right child which doesn't have a left child", () => {
+      it("remove node with only right child that isn't root", () => {
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(15);
+        bst.insert(20);
+        bst.insert(25);
+        bst.insert(13);
 
-      expect(bst.remove(3)).toBe(true);
-      expect(bst.root.left.left.value).toBe(2);
-    });
+        expect(bst.remove(5)).toBe(true);
+        expect(bst.root.left.value).toBe(8);
+      });
+      it("Remove a node with a right child but no left child at the root", () => {
+        bst.insert(10);
+        bst.insert(15);
 
-    it("remove root node with no right child", () => {
-      bst.insert(10);
-      bst.insert(5);
-      bst.insert(3);
+        expect(bst.remove(10)).toBe(true);
+        expect(bst.root.value).toBe(15);
+      });
 
-      expect(bst.remove(10)).toBe(true);
-      expect(bst.root.value).toBe(5);
-      expect(bst.root.left.value).toBe(3);
+      it("Remove a node with a right child but no left child deeper in the tree", () => {
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(15);
+        bst.insert(13);
+        bst.insert(14);
+
+        expect(bst.remove(13)).toBe(true);
+        expect(bst.root.right.left.value).toBe(14);
+      });
     });
   });
 });
