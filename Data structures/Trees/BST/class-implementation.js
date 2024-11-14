@@ -216,6 +216,32 @@ class BinarySearchTree {
               parentNode.right = currentNode.right;
             }
           }
+
+          //3) right child that has a left child
+        } else {
+          //find the right child's left most child
+          let leftMost = currentNode.right.left;
+          let leftMostParent = currentNode.right;
+
+          while (leftMost.left !== null) {
+            leftMostParent = leftMost;
+            leftMost = leftMost.left;
+          }
+
+          //Parent's left subtree is now leftmost's right subtree
+          leftMostParent.left = leftMost.right;
+          leftMost.left = currentNode.left;
+          leftMost.right = currentNode.right;
+
+          if (parentNode === null) {
+            this.root = leftMost;
+          } else {
+            if (currentNode.value < parentNode.value) {
+              parentNode.left = leftMost;
+            } else if (currentNode.value > parentNode.value) {
+              parentNode.right = leftMost;
+            }
+          }
         }
 
         return true;
@@ -230,22 +256,20 @@ module.exports = BinarySearchTree;
 // Create a new BST and insert values
 /*
 const bst = new BinarySearchTree();
-bst.insert(15);
-bst.insert(10);
-bst.insert(25);
-bst.insert(5);
-bst.insert(12);
+bst.insert(9);
+bst.insert(4);
+bst.insert(6);
 bst.insert(20);
-bst.insert(30);
-bst.insert(3);
+bst.insert(25);
+bst.insert(15);
+bst.insert(1);
 
 // Display the BST before removal
 console.log("BST before removal:");
 bst.display();
 // Remove node with value 5
-bst.remove(5);
+bst.remove(1);
 // Display the BST after removal
 console.log("\nBST after removal:");
 bst.display();
-
 */
