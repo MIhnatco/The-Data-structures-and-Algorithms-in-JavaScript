@@ -203,5 +203,30 @@ describe("BST class implementation", () => {
         expect(bst.root.right.left.value).toBe(14);
       });
     });
+
+    describe("node with two children", () => {
+      it("remove a node with right child that has a left child", () => {
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(15);
+        bst.insert(12);
+        bst.insert(11);
+
+        expect(bst.remove(10)).toBe(true);
+        expect(bst.root.value).toBe(11);
+      });
+
+      it("assign the leftmost right child to the root", () => {
+        bst.insert(30);
+        bst.insert(40);
+        bst.insert(35);
+        bst.insert(32);
+        bst.insert(31);
+
+        expect(bst.remove(30)).toBe(true);
+        expect(bst.root.value).toBe(31);
+        expect(bst.root.right.value).toBe(40);
+      });
+    });
   });
 });
